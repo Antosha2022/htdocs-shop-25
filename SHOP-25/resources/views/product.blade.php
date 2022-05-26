@@ -66,17 +66,9 @@
                             <!-- <span class="text-decoration-line-through">$45.00</span>
                             <span>95.00 ГРН</span> -->
                         </div>
-
-
-
-
-
-
-                              <p class="lead">
+                            <p class="lead">
                                 @include('layouts.instructions.70ml')
                               </p>
-
-
                         <!-- <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p> -->
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
@@ -164,7 +156,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">купити</a></div>
                             </div>
                         </div>
                     </div>
