@@ -1,0 +1,23 @@
+
+ // Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//body {background: blue}
+
+/* додавання власного стилю для малюнків */
+#mediaFiles{
+  width: 100%;
+  height: 30%;
+  background-color: #99ffff;
+  border-bottom: 2px solid silver;
+  margin-top: 10px;
+  color: red;
+
+}
+/* додавання власного стилю для малюнків завершено */
