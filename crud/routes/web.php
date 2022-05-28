@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/shop', function(){
+Route::get('/', function(){
     return view('shop');
 });
 
@@ -26,6 +26,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/shop', 'HomeController@index')->name('shop');
 
-Route::get('/product', 'HomeController@index')->name('product');
+// Route::get('/product', 'HomeController@index')->name('product');
 
 // Route::get('/product/submit', 'ProductController@submit')->name('product');
