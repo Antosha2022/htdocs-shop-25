@@ -31,8 +31,30 @@
               </form>
 
               <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2">Login</button>
-                <button type="button" class="btn btn-warning">Sign-up</button>
+                <!-- <button type="button" class="btn btn-outline-light me-2">Login</button> -->
+                <!-- <button type="button" class="btn btn-warning">Sign-up
+
+
+
+              </button> -->
+                <!-- добавление кнопки входа и виходу для зареєстораних -->
+                                        @guest
+                                        <li class="nav-item"><a class="nav-link active" href="{{route('login')}}">вхід</a></li>
+                                            @else
+                                            <li class="nav-item">
+                                            <a class="btn btn-warning" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">вихід</a>
+                                            <!-- схована форма для можливості виходу -->
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                            </li>
+                                        @endguest
+                <!-- добавление кнопки входа и виходу для зареєстораних -->
+
+
+
               </div>
             </div>
 
