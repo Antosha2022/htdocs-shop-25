@@ -24,6 +24,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware'=>['auth']], function(){
+            Route::get('admin-home', function (){
+                    return view('bookkeeper.admin-home');
+                  });
+          });
+
 // Route::get('/shop', 'HomeController@index')->name('shop');
 
 // Route::get('/product', 'HomeController@index')->name('product');
