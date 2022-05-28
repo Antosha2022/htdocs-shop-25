@@ -15,11 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/shop', function(){
+    return view('shop');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/shop', 'HomeController@index')->name('shop');
+// Route::get('/shop', 'HomeController@index')->name('shop');
 
 Route::get('/product', 'HomeController@index')->name('product');
 
