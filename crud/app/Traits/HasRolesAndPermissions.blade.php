@@ -130,5 +130,85 @@ trait HasRolesAndPermissions {
         return $this->roles->pluck('slug')->toArray();
     }
 
+    /* ... */
+
+    /**
+     * Добавить текущему пользователю права $permissions
+     * (в дополнение к тем, что уже были назначены ранее)
+     */
+    public function assignPermissions(...$permissions) {
+        $permissions = Permission::whereIn('slug', $permissions)->get();
+        if ($permissions->count() === 0) {
+            return $this;
+        }
+        $this->permissions()->syncWithoutDetaching($permissions);
+        return $this;
+    }
+
+    /**
+     * Отнять у текущего пользователя права $permissions
+     * (из числа тех, что были назначены ранее)
+     */
+    public function unassignPermissions(...$permissions) {
+        $permissions = Permission::whereIn('slug', $permissions)->get();
+        if ($permissions->count() === 0) {
+            return $this;
+        }
+        $this->permissions()->detach($permissions);
+        return $this;
+    }
+
+    /**
+     * Назначить текущему пользователю права $permissions
+     * (отнять при этом все ранее назначенные права)
+     */
+    public function refreshPermissions(...$permissions) {
+        $permissions = Permission::whereIn('slug', $permissions)->get();
+        if ($permissions->count() === 0) {
+            return $this;
+        }
+        $this->permissions()->sync($permissions);
+        return $this;
+    }
+
+    /**
+     * Добавить текущему пользователю роли $roles
+     * (в дополнение к тем, что уже были назначены)
+     */
+    public function assignRoles(...$roles) {
+        $roles = Role::whereIn('slug', $roles)->get();
+        if ($roles->count() === 0) {
+            return $this;
+        }
+        $this->roles()->syncWithoutDetaching($roles);
+        return $this;
+    }
+
+    /**
+     * Отнять у текущего пользователя роли $roles
+     * (из числа тех, что были назначены ранее)
+     */
+    public function unassignRoles(...$roles) {
+        $roles = Role::whereIn('slug', $roles)->get();
+        if ($roles->count() === 0) {
+            return $this;
+        }
+        $this->roles()->detach($roles);
+        return $this;
+    }
+
+    /**
+     * Назначить текущему пользователю роли $roles
+     * (отнять при этом все ранее назначенные роли)
+     */
+    public function refreshRoles(...$roles) {
+        $roles = Role::whereIn('slug', $roles)->get();
+        if ($roles->count() === 0) {
+            return $this;
+        }
+        $this->roles()->sync($roles);
+        return $this;
+    }
+
 
 }
