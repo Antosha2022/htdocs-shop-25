@@ -28,6 +28,14 @@ Route::group(['middleware'=>['auth']], function(){
             Route::get('admin-home', function (){
                     return view('bookkeeper.admin-home');
                   });
+            Route::get('product', function (){
+                          return view('bookkeeper.product');
+                        })->name('product');
+
+            Route::get('order', function (){
+                          return view('bookkeeper.order');
+                        })->name('order');                        
+
           });
 
 // Route::get('/shop', 'HomeController@index')->name('shop');

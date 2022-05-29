@@ -26,16 +26,5 @@ class HomeController extends Controller
         return view('home');
     }
 
-    // public function shop()
-    // {
-    //     return view('shop');
-    // }
-
-    public function product()
-    {
-        return view('product');
-    }
-
-
 
 }
