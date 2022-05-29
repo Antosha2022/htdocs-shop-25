@@ -44,8 +44,8 @@ class ProductController extends Controller
       $product->retail_price = $req->input('retail_price');
 
         dd($request);
-      // $contact->save();
-      // return redirect()->route('home')->with ('success', 'Повідомлення було відправлено');
+      $contact->save();
+      return redirect()->route('home')->with ('success', 'Повідомлення було відправлено');
 
         // dd($request);
     }
