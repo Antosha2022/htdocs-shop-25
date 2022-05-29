@@ -46,7 +46,7 @@
                                             <li class="nav-item">
                                             <a class="btn btn-warning" href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">вихід</a>
+                                                             document.getElementById('logout-form').submit();">завершити сессію {{ Auth::user()->name }}</a>
                                             <!-- схована форма для можливості виходу -->
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
