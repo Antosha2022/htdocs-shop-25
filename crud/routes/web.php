@@ -2,6 +2,7 @@
 
 Route::get('/', function(){return view('shop');});
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -16,7 +17,11 @@ Route::group(['middleware'=>['auth']], function(){
 
             Route::get('product', 'BookkeeperController@product')->name('product');
 
-            Route::get('order', 'BookkeeperController@order')->name('order');
+            Route::post('product/check', 'ProductController@store')->name('product-form');
+
+
+
+            // Route::get('order', 'BookkeeperController@order')->name('order');
 
           });
 
