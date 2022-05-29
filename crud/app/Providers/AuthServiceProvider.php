@@ -40,7 +40,7 @@ class AuthServiceProvider extends ServiceProvider
           if ($user->isSuperAdmin()){
             return true;
           }
-        })
+        });
 
     }
 }
