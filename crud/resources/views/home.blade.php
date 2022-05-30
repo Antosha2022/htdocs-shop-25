@@ -15,10 +15,10 @@
                     @endif
 
               ви успішно зареєструвались!
-
-
-
-
+                          <div class="btn-group-vertical">
+                              <button type="button" class="btn btn-info btn-lg" href="/">повернутися в крамницю</button>
+                              <button type="button" class="btn btn-warning btn-lg" href="{{ route('admin-home') }}">перейти до адміністративної панелі</button>
+                          </div>
                 </div>
             </div>
         </div>
