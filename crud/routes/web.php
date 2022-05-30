@@ -19,7 +19,7 @@ Route::group(['middleware'=> ['auth']], function(){
 
             Route::get('product', 'BookkeeperController@product')->name('product');
 
-            Route::post('product/check', 'ProductController@store')->name('product-form');
+            Route::post('product/submit', 'ProductController@store')->name('product-form');
 
 
 

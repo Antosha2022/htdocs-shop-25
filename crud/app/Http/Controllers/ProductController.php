@@ -26,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +35,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductRequest $req)
+    public function store(Request $req)
     {
       $product=new Product();
       $product->short_name = $req->input('short_name');
@@ -43,11 +43,10 @@ class ProductController extends Controller
       $product->description = $req->input('description');
       $product->retail_price = $req->input('retail_price');
 
-        dd($request);
-      $contact->save();
-      return redirect()->route('home')->with ('success', 'Повідомлення було відправлено');
+      // $product->save();
+      // return redirect()->route('admin-home')->with ('success', 'продукт додано');
 
-        // dd($request);
+       dd($req);
     }
 
     /**

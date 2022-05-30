@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Product;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ProductRequest extends FormRequest
@@ -26,19 +27,18 @@ class ProductRequest extends FormRequest
      {
          return [
            'short_name'=>'required'
-           // 'email'=>'required|email',
-           // 'subject'=>'required|min:2|max:50',
-           // 'message'=>'required|max:500'
+           'bar_code'=>'required',
+           'description'=>'required',
+           'retail_price'=>'required'
          ];
      }
 
      public function messages (){
        return [
          'short_name.required'=>'Треба вказати назву'
-         // 'email.required'=>'Треба вказати електрону пошту',
-         // 'email.email'=>'То не дуже схоже на email',
-         // 'subject.required'=>'Напишіть, будь ласка тему звернення',
-         // 'message.required'=>'Поле повідомлення є обов`язковим'
+         'bar_code.required'=>'Треба вказати штрих-код',
+         'description.required'=>'Внесіть інформацію для споживача',
+         'retail_price.required'=>'Вкажіть ціну'
        ];
      }
 }
