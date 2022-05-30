@@ -43,10 +43,10 @@ class ProductController extends Controller
       $product->description = $req->input('description');
       $product->retail_price = $req->input('retail_price');
 
-      // $product->save();
-      // return redirect()->route('admin-home')->with ('success', 'продукт додано');
+      $product->save();
+      return redirect()->route('admin-home');
 
-       dd($req);
+       // dd($req);
     }
 
     /**
