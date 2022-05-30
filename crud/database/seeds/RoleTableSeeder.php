@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Role;
 class RoleTableSeeder extends Seeder
 {
     /**
@@ -24,8 +24,8 @@ class RoleTableSeeder extends Seeder
       ];
       foreach ($roles as $item) {
           $role = new App\Role();
-          $role->name = $item['name'];
-          $role->slug = $item['slug'];
+          $role->name = $item['Visitor'];
+          $role->slug = $item['user'];
           $role->save();
       }
   }

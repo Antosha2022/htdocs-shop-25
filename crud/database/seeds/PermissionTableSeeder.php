@@ -39,7 +39,7 @@ class PermissionTableSeeder extends Seeder
           // ['slug' => 'manage-comments', 'name' => 'Управление комментариями блога'],
           // ['slug' => 'create-comment', 'name' => 'Создание комментария к посту'],
           // ['slug' => 'edit-comment', 'name' => 'Редактирование комментария к посту'],
-          // ['slug' => 'publish-comment', 'name' => 'Публикация комментария к посту'],
+          ['user' => 'publish-comment', 'name' => 'Публикація відгуку'],
           // ['slug' => 'delete-comment', 'name' => 'Удаление комментария к посту'],
       ];
       foreach ($permissions as $item) {

@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->unsignedBigInteger('role_id');
-            $table->unsignedBigInteger('permission_id');
+            $table->unsignedBigInteger('role_id')->default('3');
+            $table->unsignedBigInteger('permission_id')->default('1');
         });
     }
 
