@@ -14,9 +14,10 @@ class CheckUserRole
      * @return mixed
      */
     public function handle($request, Closure $next,$role){
-                if ( ! auth()->user()->hasRole($role)) {
-                    abort(404);
-                }
+      // public function handle($request, Closure $next,$role){
+                // if ( auth()->user()->hasRole('admin')) {
+                //     abort(404);
+                // }
         return $next($request);
     }
 }

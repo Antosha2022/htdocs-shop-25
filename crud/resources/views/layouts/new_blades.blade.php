@@ -20,3 +20,9 @@
 @anyperms('edit-post', 'delete-post')
     <p>Есть по крайней мере одно право</p>
 @endanyperms
+
+Route::group(['middleware' => 'role:admin'], function() {
+   Route::get('/admin/index', function() {
+      return 'Это панель управления сайта';
+   });
+});

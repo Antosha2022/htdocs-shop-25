@@ -7,7 +7,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware'=>['auth']], function(){
+Route::group(['middleware'=> ['auth']], function(){
+
+
 
             // Route::get('admin-home', function (){
             //         return view('bookkeeper.admin-home');
