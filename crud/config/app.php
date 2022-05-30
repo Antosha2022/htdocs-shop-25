@@ -165,7 +165,8 @@ return [
         /*
          * Package Service Providers...
          */
-
+        App\Providers\RoleServiceProvider::class,
+        App\Providers\PermissionServiceProvider::class,
         /*
          * Application Service Providers...
          */
