@@ -93,7 +93,7 @@
                                 <div class="card h-100">
                                     <!-- Product image-->
                                           <div class="mediaFiles">
-                                          <img class="card-img-top" src="/mediaFiles/img70ml.png" alt="спрей назальний 70 мл 100% морська вода очищена" />
+                                          <img class="card-img-top"  src="/mediaFiles/img_product1.png" alt="спрей назальний 70 мл 100% морська вода очищена" />
                                           </div>
 
                                     <!-- Product details-->
