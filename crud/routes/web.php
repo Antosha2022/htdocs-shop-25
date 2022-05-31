@@ -22,7 +22,7 @@ Route::group(['middleware'=> ['auth']], function(){
             Route::post('product/submit','ProductController@store')->name('product-form');
 
             //  перегляд списку продуктів
-            Route::get('/product/all',
+            Route::get('/product-list',
             'ProductController@FunctionAllData')->name('product-data');
 
             // детальний перегляд одного запису

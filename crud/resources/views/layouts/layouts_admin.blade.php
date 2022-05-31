@@ -21,8 +21,8 @@
               <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="/" class="nav-link px-2 text-secondary">Крамниця АЗОВА |</a></li>
                 <li><a href="/admin-home" class="nav-link px-2 text-secondary">назад</a></li>
-                <li><a href="/product" class="nav-link px-2 text-white">продукти</a></li>
-                <li><a href="/order" class="nav-link px-2 text-white">замовлення</a></li>
+                <li><a href="/product-list" class="nav-link px-2 text-white">продукти</a></li>
+                <li><a href="#" class="nav-link px-2 text-white">замовлення</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">клієнти</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">банк</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">звітність</a></li>
