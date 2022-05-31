@@ -26,6 +26,23 @@ class ProductController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+      $product=new Product;
+      return view('bookkeeper.one-product',['data'=>$product->find($id)]);
+    }
+
+
+
+
+
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -55,17 +72,6 @@ class ProductController extends Controller
        // dd($req);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Product $id)
-    {
-      $product=new Product;
-      return view('bookkeeper.productList',['data'=>$product->find($id)]);
-    }
 
     /**
      * Show the form for editing the specified resource.
