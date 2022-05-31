@@ -30,7 +30,7 @@ Route::group(['middleware'=> ['auth']], function(){
             'ProductController@FunctionAllData')->name('product-data');
 
             // детальний перегляд одного запису
-            Route::get('/product/all{id}',
+            Route::get('/product-list{id}',
             'ProductController@show')->name('product-data-one');
 
 

@@ -64,7 +64,7 @@ class ProductController extends Controller
     public function show(Product $id)
     {
       $product=new Product;
-      return view('one-product',['data'=>$product->find($id)]);
+      return view('bookkeeper.productList',['data'=>$product->find($id)]);
     }
 
     /**
