@@ -19,7 +19,15 @@ Route::group(['middleware'=> ['auth']], function(){
 
             Route::get('product', 'BookkeeperController@product')->name('product');
 
-            Route::post('product/submit', 'ProductController@store')->name('product-form');
+            Route::post('product/submit','ProductController@store')->name('product-form');
+
+            //  перегляд списку продуктів
+            Route::get('/product/all',
+            'ProductController@FunctionAllData')->name('product-data');
+
+            // детальний перегляд одного запису
+            Route::get('/product/all{id}',
+            'ProductController@show')->name('product-data-one');
 
 
 

@@ -19,6 +19,13 @@ class ProductController extends Controller
         //
     }
 
+
+    public function FunctionAllData(){
+    // можна подивитись повний масив
+    //   dd(Contact::all());
+    return view('bookkeeper.productList',['data'=>Product::all()]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -55,9 +62,10 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Product $id)
     {
-        //
+      $product=new Product;
+      return view('one-product',['data'=>$product->find($id)]);
     }
 
     /**
