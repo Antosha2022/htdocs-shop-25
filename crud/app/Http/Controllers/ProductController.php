@@ -51,7 +51,7 @@ class ProductController extends Controller
       $product->retail_price = $req->input('retail_price');
 
       $product->save();
-      return redirect()->route('admin-home');
+      return redirect()->route('product-data');
 
        // dd($req);
     }
