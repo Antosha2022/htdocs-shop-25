@@ -33,10 +33,10 @@ Route::group(['middleware'=> ['auth']], function(){
 
             // оновлення в 2 кроки через 2 методи
             Route::get('/product-list{id}update',
-            'ProductController@show')->name('product-update');
+            'ProductController@edit')->name('product-update');
 
             Route::post('/product-list{id}update',
-            'ProductController@show')->name('product-update-submit');
+            'ProductController@update')->name('product-update-submit');
 
 
 
