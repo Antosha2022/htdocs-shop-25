@@ -79,9 +79,9 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
-    {
-        //
+    public function edit($id){
+      $product=new Product;
+      return view('bookkeeper.update-product',['data'=>$product->find($id)]);
     }
 
     /**
@@ -93,7 +93,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+      $product=new Product();
+      $product->short_name = $req->input('short_name');
+      $product->bar_code = $req->input('bar_code');
+      $product->description = $req->input('description');
+      $product->retail_price = $req->input('retail_price');
+
+      $product->save();
+      return redirect()->route('product-data');
     }
 
     /**

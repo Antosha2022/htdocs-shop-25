@@ -4,7 +4,7 @@
 <div class="container mt-3">
 
 
-<h3>карточка продукта</h3>
+<h3>карточка продукта: оновлення</h3>
 
     <!-- @if($errors->any())
     <div class="alert alert-danger">
@@ -46,7 +46,7 @@
     <input type="double" name="retail_price" value="{{$data->retail_price}}" id="retail_price" class="form-control">
   </div>
 
-<button type="submit" class="btn btn-warning mt-3">зберегти</button>
+<button type="submit" class="btn btn-warning mt-3">зберегти оновлення</button>
 
 </form>
 
