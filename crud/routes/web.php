@@ -31,9 +31,14 @@ Route::group(['middleware'=> ['auth']], function(){
             Route::get('/product-list{id}',
             'ProductController@show')->name('product-data-one');
 
+            // оновлення в 2 кроки через 2 методи
+            Route::get('/product-list{id}update',
+            'ProductController@show')->name('product-update');
 
+            Route::get('/product-list{id}update',
+            'ProductController@show')->name('product-update-submit');
 
-            // Route::get('order', 'BookkeeperController@order')->name('order');
+          
 
           });
 
