@@ -1,19 +1,20 @@
 @extends('layouts.layouts_admin')
-@section('title')номенклатура@endsection
+@section('title'){{ $data->short_name }}@endsection
 @section('bookkeeper_content')
 <div class="container mt-3">
-<h3>продукти</h3>
 
 
-        <div >
-          <h5><b>{{ $data->short_name }}<b></h5>
-          <p>{{$data->short_name}}</p>
-          <p>{{$data->bar_code}}</p>
-          <p>{{$data->description}}</p>
-          <p><small>{{ $data->retail_price}}</small></p>
 
+
+          <h5><b>{{ $data->short_name }}</b></h5>
+          <hr class="text-info border-2 opacity-50">
+          <p>штрих-код: {{$data->bar_code}}</p>
+          <p>ціна: {{ $data->retail_price}}  ГРН</p>
+          <p>інформація для споживача:</br>{{$data->description}}</p>
+          <p><small>останнє редагування: {{ $data->updated_at}}</small></p>
           <a href="{{route('product-data-one',$data->id)}}"><button class= "btn btn-warning">детальніше</button></a>
-        </div>
+          <hr class="text-warning border-2 opacity-50">
 
+  </div>
 
 @endsection
