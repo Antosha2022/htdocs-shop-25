@@ -35,10 +35,10 @@ Route::group(['middleware'=> ['auth']], function(){
             Route::get('/product-list{id}update',
             'ProductController@show')->name('product-update');
 
-            Route::get('/product-list{id}update',
+            Route::post('/product-list{id}update',
             'ProductController@show')->name('product-update-submit');
 
-          
+
 
           });
 
