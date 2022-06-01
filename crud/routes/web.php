@@ -4,7 +4,7 @@ Route::get('/', function(){return view('shop');});
 
 //динамічна адреса детального перегляду обраного продукту
 // Route::get('/product{id}', function(){return view('product-shop');});
-// Route::get('/product{id}','ProductController@index')->name('product-shop');
+Route::get('/product-shop','ProductController@ProductShop')->name('product-shop');
 
 
 Auth::routes();

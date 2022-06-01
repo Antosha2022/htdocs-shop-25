@@ -14,8 +14,12 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        return view('bookkeeper.product-shop',['data'=>Product::all()]);
+    public function ProductShop(){
+        // return view for product id=2
+        $product=new Product;
+        return view('bookkeeper.product-shop',['data'=>$product->find(2)]);
+
+
     }
 
 
@@ -24,7 +28,7 @@ class ProductController extends Controller
     //   dd(Contact::all());
       // return view('bookkeeper.productList',['data'=>Product::all()]);
         $product=new Product;
-    return view('bookkeeper.productList',['data'=>$product->orderBy('id','desc')->get()]);
+    return view('bookkeeper.productList',['data'=>$product->orderBy('updated_at','desc')->get()]);
     }
 
     /**

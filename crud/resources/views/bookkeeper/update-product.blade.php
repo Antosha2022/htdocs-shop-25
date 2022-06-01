@@ -14,14 +14,9 @@
       </ul>
     </div>
     @endif
-
-
 <!-- <form method="post" action='/product-list{id}/update'> -->
 <form method="post" action="{{route('product-update-submit',$data->id)}}">
-
-
   @csrf
-
   <!-- <div class="mb-3">
     <label for="photo" class="form-label">завантажте зображення</label>
     <input class="form-control" type="file" id="photo">

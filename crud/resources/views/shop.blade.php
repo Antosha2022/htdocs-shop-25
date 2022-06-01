@@ -147,7 +147,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product500">детальніше</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="2" href="product-shop">детальніше</a></div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
