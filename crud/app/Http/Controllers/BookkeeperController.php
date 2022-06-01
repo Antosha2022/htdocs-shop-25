@@ -20,7 +20,10 @@ class BookkeeperController extends Controller
   // public function product_check(ProductRequest $req){
   //     dd($req);
   // }
-
+  public function editProduct($id){
+    $product=new Product();
+    return view('bookkeeper.update-product',['data'=>$product->find($id)]);
+  }
 
 
   public function order(){

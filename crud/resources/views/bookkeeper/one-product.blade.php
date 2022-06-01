@@ -8,6 +8,7 @@
 
           <h5><b>{{ $data->short_name }}</b></h5>
           <hr class="text-info border-2 opacity-50">
+          <p>id: {{$data->id}}</p>
           <p>штрих-код: {{$data->bar_code}}</p>
           <p>ціна: {{ $data->retail_price}}  ГРН</p>
           <p>інформація для споживача:</br>{{$data->description}}</p>

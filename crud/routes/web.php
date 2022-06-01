@@ -32,11 +32,11 @@ Route::group(['middleware' => 'role:admin'], function(){
             'ProductController@show')->name('product-data-one');
 
             // оновлення в 2 кроки через 2 методи
-            Route::get('/product-list{id}update',
-            'ProductController@editeProduct')->name('product-update');
+            Route::get('/product-list{id}/update',
+            'ProductController@updateProduct')->name('product-update');
 
-            // Route::post('/product-list{id}update',
-            // 'ProductController@editeProduct')->name('product-update-submit');
+            Route::post('/product-list{id}/update',
+            'ProductController@editProductSubmit')->name('product-update-submit');
 
             // видалення запису
             Route::get('/contact/all{id}/delete',

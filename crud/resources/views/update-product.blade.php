@@ -17,7 +17,7 @@
     @endif
 
 
-<form method="post" action="{{route('/bookkeeper/update-product',$data->id)}}">
+<form method="post" action="{{route('product-update-submit',$data->id)}}">
   @csrf
 
   <!-- <div class="mb-3">

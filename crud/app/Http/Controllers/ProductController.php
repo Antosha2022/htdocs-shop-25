@@ -58,7 +58,7 @@ class ProductController extends Controller
         'short_name'=>'required',
         'bar_code'=>'required',
         'description'=>'required',
-        'retail_price'=>'required',        
+        'retail_price'=>'required',
       ]);
       $product=new Product();
       $product->short_name = $req->input('short_name');
@@ -78,13 +78,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function editProduct($id){
-      $product=new Product();
-      return view('product-update',['data'=>$product->find($id)]);
+    public function updateProduct($id){
+      $product=Product::find($id);
+      return view('update-product',['data'=>$product->find($id)]);
     }
 
 
-    public function editProductSubmit($id, ProductRequest $req) {
+    public function editProductSubmit($id, Request $req) {
       $product=Product::find($id);
       $product->short_name = $req->input('short_name');
       $product->bar_code = $req->input('bar_code');
@@ -92,7 +92,7 @@ class ProductController extends Controller
       $product->retail_price = $req->input('retail_price');
 
       $product->save();
-      return redirect()->route('product-data-one',$id);
+      return redirect()->route('product-data-one',$id)->with('success','Інформація про продукт успішно оновлена');
     }
 
 
