@@ -35,7 +35,7 @@ Route::group(['middleware' => 'role:admin'], function(){
             Route::get('/product-list{id}/update',
             'ProductController@updateProduct')->name('product-update');
 
-            Route::post('/product-list{id}/update',
+            Route::post('/product-list{id}/update/submit',
             'ProductController@editProductSubmit')->name('product-update-submit');
 
             // видалення запису

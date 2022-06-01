@@ -29,7 +29,8 @@ class ProductRequest extends FormRequest
            'short_name'=>'required'
            'bar_code'=>'required',
            'description'=>'required',
-           'retail_price'=>'required'
+           'retail_price'=>'required',
+           'retail_price'=>'numeric',
          ];
      }
 
@@ -38,7 +39,8 @@ class ProductRequest extends FormRequest
          'short_name.required'=>'Треба вказати назву'
          'bar_code.required'=>'Треба вказати штрих-код',
          'description.required'=>'Внесіть інформацію для споживача',
-         'retail_price.required'=>'Вкажіть ціну'
+         'retail_price.required'=>'Вкажіть ціну',
+         'retail_price.numeric'=>'Вкажіть ціну в грн',
        ];
      }
 }

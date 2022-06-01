@@ -59,6 +59,7 @@ class ProductController extends Controller
         'bar_code'=>'required',
         'description'=>'required',
         'retail_price'=>'required',
+        'retail_price'=>'numeric',
       ]);
       $product=new Product();
       $product->short_name = $req->input('short_name');
@@ -80,7 +81,7 @@ class ProductController extends Controller
      */
     public function updateProduct($id){
       $product=Product::find($id);
-      return view('update-product',['data'=>$product->find($id)]);
+      return view('bookkeeper.update-product',['data'=>$product->find($id)]);
     }
 
 
@@ -90,6 +91,13 @@ class ProductController extends Controller
       $product->bar_code = $req->input('bar_code');
       $product->description = $req->input('description');
       $product->retail_price = $req->input('retail_price');
+
+      $validation = $req->validate([
+        'short_name'=>'required',
+        'bar_code'=>'required',
+        'description'=>'required',
+        'retail_price'=>'required',
+      ]);
 
       $product->save();
       return redirect()->route('product-data-one',$id)->with('success','Інформація про продукт успішно оновлена');
