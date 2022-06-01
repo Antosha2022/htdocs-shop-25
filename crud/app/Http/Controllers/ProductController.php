@@ -22,7 +22,9 @@ class ProductController extends Controller
     public function FunctionAllData(){
     // можна подивитись повний масив
     //   dd(Contact::all());
-    return view('bookkeeper.productList',['data'=>Product::all()]);
+      // return view('bookkeeper.productList',['data'=>Product::all()]);
+        $product=new Product;
+    return view('bookkeeper.productList',['data'=>$product->orderBy('id','desc')->get()]);
     }
 
     /**
@@ -68,7 +70,7 @@ class ProductController extends Controller
       $product->retail_price = $req->input('retail_price');
 
       $product->save();
-      return redirect()->route('product-data');
+      return redirect()->route('product-data')->with('success','Продукт доданий в базу даних');
 
        // dd($req);
     }
@@ -100,7 +102,7 @@ class ProductController extends Controller
       ]);
 
       $product->save();
-      return redirect()->route('product-data-one',$id)->with('success','Інформація про продукт успішно оновлена');
+      return redirect()->route('product-data',$id)->with('success','Інформація про продукт успішно оновлена');
     }
 
 

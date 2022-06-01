@@ -5,6 +5,18 @@
 <div class="container mt-3">
 <h3>продукти<a href="/product"><button class= "btn btn-outline-info ms-3">додати новий</button></a></h3>
 
+@if($errors->any())
+<div class="alert alert-danger">
+  <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+  </ul>
+</div>
+@endif
+
+
+
 <hr class="text-info border-2 opacity-50">
 
       @foreach($data as $el)

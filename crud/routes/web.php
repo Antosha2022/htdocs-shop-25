@@ -41,9 +41,6 @@ Route::group(['middleware' => 'role:admin'], function(){
             // видалення запису
             Route::get('/contact/all{id}/delete',
             'ProductController@destroyProduct')->name('product-delete');
-
-
-
           });
 
 // Route::get('/shop', 'HomeController@index')->name('shop');

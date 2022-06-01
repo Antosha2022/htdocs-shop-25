@@ -8,8 +8,10 @@
         <title>@yield('title')</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
+
+
     </head>
     <body>
 

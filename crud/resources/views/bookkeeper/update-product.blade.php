@@ -1,6 +1,8 @@
-@extends('layouts.layouts_admin')
+@extends('.layouts.layouts_admin')
+<link href="css/styles.css" rel="stylesheet" />
 @section('title')карточка продукта@endsection
 @section('bookkeeper_content')
+
 <div class="container mt-3">
 <h3>карточка продукта: оновлення</h3>
     @if($errors->any())
