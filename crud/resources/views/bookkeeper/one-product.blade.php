@@ -12,7 +12,9 @@
           <p>ціна: {{ $data->retail_price}}  ГРН</p>
           <p>інформація для споживача:</br>{{$data->description}}</p>
           <p><small>останнє редагування: {{ $data->updated_at}}</small></p>
-          <a href="{{route('product-update',$data->id)}}"><button class= "btn btn-info">редагувати</button></a>
+          <a href="{{route('product-data')}}"><button class= "btn btn-outline-info">назад</button></a>
+          <a href="{{route('product-update',$data->id)}}"><button class= "btn btn-outline-warning">редагувати</button></a>
+          <a href="{{route('product-delete',$data->id)}}"><button class= "btn btn-outline-danger">видалити назавжди</button></a>
           <hr class="text-warning border-2 opacity-50">
 
   </div>

@@ -6,7 +6,7 @@
 
 <h3>карточка продукта: оновлення</h3>
 
-    <!-- @if($errors->any())
+    @if($errors->any())
     <div class="alert alert-danger">
       <ul>
           @foreach ($errors->all() as $error)
@@ -14,10 +14,10 @@
           @endforeach
       </ul>
     </div>
-    @endif -->
+    @endif
 
 
-<form method="post" action="{{route('prodct-update-submit',$data->id)}}">
+<form method="post" action="{{route('/bookkeeper/update-product',$data->id)}}">
   @csrf
 
   <!-- <div class="mb-3">

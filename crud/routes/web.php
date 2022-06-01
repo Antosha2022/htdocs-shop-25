@@ -11,7 +11,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware'=> ['auth']], function(){
+Route::group(['middleware' => 'role:admin'], function(){
 
             // Route::get('admin-home', function (){
             //         return view('bookkeeper.admin-home');
@@ -33,10 +33,14 @@ Route::group(['middleware'=> ['auth']], function(){
 
             // оновлення в 2 кроки через 2 методи
             Route::get('/product-list{id}update',
-            'ProductController@edit')->name('product-update');
+            'ProductController@editeProduct')->name('product-update');
 
-            Route::post('/product-list{id}update',
-            'ProductController@update')->name('product-update-submit');
+            // Route::post('/product-list{id}update',
+            // 'ProductController@editeProduct')->name('product-update-submit');
+
+            // видалення запису
+            Route::get('/contact/all{id}/delete',
+            'ProductController@destroyProduct')->name('product-delete');
 
 
 

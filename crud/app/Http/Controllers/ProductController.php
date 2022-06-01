@@ -37,11 +37,6 @@ class ProductController extends Controller
       return view('bookkeeper.one-product',['data'=>$product->find($id)]);
     }
 
-
-
-
-
-
     /**
      * Show the form for creating a new resource.
      *
@@ -54,12 +49,17 @@ class ProductController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * створення нового продукту
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $req)
-    {
+    public function store(Request $req){
+      $validation = $req->validate([
+        'short_name'=>'required',
+        'bar_code'=>'required',
+        'description'=>'required',
+        'retail_price'=>'required',        
+      ]);
       $product=new Product();
       $product->short_name = $req->input('short_name');
       $product->bar_code = $req->input('bar_code');
@@ -72,36 +72,30 @@ class ProductController extends Controller
        // dd($req);
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit($id){
-      $product=new Product;
-      return view('bookkeeper.update-product',['data'=>$product->find($id)]);
+    public function editProduct($id){
+      $product=new Product();
+      return view('product-update',['data'=>$product->find($id)]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Product $product)
-    {
-      $product=new Product();
+
+    public function editProductSubmit($id, ProductRequest $req) {
+      $product=Product::find($id);
       $product->short_name = $req->input('short_name');
       $product->bar_code = $req->input('bar_code');
       $product->description = $req->input('description');
       $product->retail_price = $req->input('retail_price');
 
       $product->save();
-      return redirect()->route('product-data');
+      return redirect()->route('product-data-one',$id);
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -109,8 +103,8 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
-    {
-        //
+    public function destroyProduct($id){
+      Product::find($id)->delete();
+      return redirect()->route('product-data');
     }
 }
