@@ -47,8 +47,9 @@
     <label for="retail_price">введіть ціну</label>
     <input type="double" name="retail_price" value="{{$data->retail_price}}" id="retail_price" class="form-control">
   </div>
-
-<button type="submit" class="btn btn-warning mt-3">зберегти оновлення</button>
+<button class= "btn btn-outline-info mt-3" href="{{route('product-data')}}">назад</button>
+<button type="submit" class="btn btn-outline-warning mt-3">зберегти оновлення</button>
+<!-- <button class= "btn btn-outline-danger mt-3" href="{{route('product-delete',$data->id)}}">видалити назавжди</button> -->
 
 </form>
 

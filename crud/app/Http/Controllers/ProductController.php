@@ -88,12 +88,6 @@ class ProductController extends Controller
 
 
     public function editProductSubmit($id, Request $req) {
-      $product=Product::find($id);
-      $product->short_name = $req->input('short_name');
-      $product->bar_code = $req->input('bar_code');
-      $product->description = $req->input('description');
-      $product->retail_price = $req->input('retail_price');
-
       $validation = $req->validate([
         'short_name'=>'required',
         'bar_code'=>'required',
@@ -101,8 +95,15 @@ class ProductController extends Controller
         'retail_price'=>'required',
       ]);
 
+      $product=Product::find($id);
+      $product->short_name = $req->input('short_name');
+      $product->bar_code = $req->input('bar_code');
+      $product->description = $req->input('description');
+      $product->retail_price = $req->input('retail_price');
+
       $product->save();
-      return redirect()->route('product-data',$id)->with('success','Інформація про продукт успішно оновлена');
+      return redirect()->route('product-data',$id)
+      ->with('success','Інформація про продукт успішно оновлена');
     }
 
 
