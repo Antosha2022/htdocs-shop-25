@@ -4,14 +4,26 @@ Route::get('/', function(){return view('shop');});
 
 //динамічна адреса детального перегляду обраного продукту
 // Route::get('/product{id}', function(){return view('product-shop');});
-Route::get('/product-shop','ProductController@ProductShop')->name('product-shop');
+// Route::get('/shop-product1','OrderController@ProductFirstShop')->name('shop-product1');
+// Route::get('/shop-product2','OrderController@ProductSecondShop')->name('shop-product2');
+// Route::get('/shop-product3','OrderController@ProductThirdShop')->name('shop-product3');
+// Route::get('/shop-product4','OrderController@ProductFourthShop')->name('shop-product4');
+
+
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'role:admin'], function(){
+  Route::group(['middleware'=>['auth']], function(){
+//////////////////////////added 02 06 2022/////////////////
+//             Route::get('/admin-home', function (){ //before 02 06 2022
+//                     return view('admin-home');
+//                   });
+//           });
+// Route::group(['middleware' => 'role:admin'], function(){
+//////////////////block ///////////////////////////////////
 
             // Route::get('admin-home', function (){
             //         return view('bookkeeper.admin-home');
