@@ -108,7 +108,7 @@
                                     </div>
                                     <!-- Product actions-->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product">детальніше</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/1">детальніше</a></div>
                                     </div>
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
@@ -125,7 +125,7 @@
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
                               <div class="mediaFiles">
-                                  <img class="card-img-top" src="/mediaFiles/img500ml.png" alt="100% морська вода очищена" />
+                                  <img class="card-img-top" src="/mediaFiles/img_product2.png" alt="100% морська вода очищена" />
                               </div>
                             <!-- Product details-->
                             <div class="card-body p-4">
@@ -147,7 +147,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/shop-product2">детальніше</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/2">детальніше</a></div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
@@ -163,7 +163,7 @@
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
                             <div class="mediaFiles">
-                            <img class="card-img-top" src="/mediaFiles/img30hml.png" alt="спрей гіпертонічний 30 мл" />
+                            <img class="card-img-top" src="/mediaFiles/img_product3.png" alt="спрей гіпертонічний 30 мл" />
                             </div>
                             <!-- Product details-->
                             <div class="card-body p-4">
@@ -177,7 +177,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/shop-product3">детальніше</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/3">детальніше</a></div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
@@ -192,7 +192,7 @@
                         <div class="card h-100">
                             <!-- Product image-->
                             <div class="mediaFiles">
-                            <img class="card-img-top" src="/mediaFiles/img30iml.png" alt="спрей ізотонічний 30 мл" />
+                            <img class="card-img-top" src="/mediaFiles/img_product4.png" alt="спрей ізотонічний 30 мл" />
                             </div>
 
                             <!-- Product details-->
@@ -214,7 +214,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/shop-product4">детальніше</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/4">детальніше</a></div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>

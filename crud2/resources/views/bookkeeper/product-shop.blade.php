@@ -4,8 +4,9 @@
         <!-- Product section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
-                <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+                <!-- <div class="row gx-4 gx-lg-5 align-items-center"> -->
+                  <div class="row gx-4 gx-lg-5 align-items-top">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/mediaFiles/img_product{{$data->id}}.png" alt="{{$data->short_name}}" /></div>
                     <div class="col-md-6">
                         <div class="small mb-1">{{$data->bar_code}}</div>
                           <div class="small mb-1">{{$data->id}}</div>
@@ -35,7 +36,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="#" alt="{{$data->short_name}}" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
