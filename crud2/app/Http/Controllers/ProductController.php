@@ -29,6 +29,11 @@ class ProductController extends Controller
     return view('bookkeeper.productList',['data'=>$product->orderBy('updated_at','desc')->get()]);
     }
 
+    public function ProductCardShop(){
+        $product=new Product;
+    return view('shop',['data'=>$product->orderBy('id','asc')->take(4)->get()]);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -107,8 +112,6 @@ class ProductController extends Controller
       return redirect()->route('product-data',$id)
       ->with('success','Інформація про продукт успішно оновлена');
     }
-
-
 
     /**
      * Remove the specified resource from storage.

@@ -1,9 +1,10 @@
 <?php
-Route::get('/', function(){return view('shop');});
+// Route::get('/', function(){return view('shop');});
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/product/{id}', 'BookkeeperController@productShop')->name('product-shop');//динамічна адреса детального перегляду обраного продукту
 Route::get('/basket', 'OrderController@showBasket')->name('basket');
+Route::get('/','ProductController@ProductCardShop')->name('product-card');
 
 
   Route::group(['middleware'=>['auth']], function(){

@@ -21,6 +21,7 @@
 
       @foreach($data as $el)
     <div>
+          <img class="mediaFiles" height="20%" width="20%" src="/mediaFiles/img_product{{ $el->id}}.png"/>
           <h5>{{$el->short_name}}</h5>
           штрих-код: {{$el->bar_code}}</br>
           <small>ціна: {{ $el->retail_price}} ГРН</br>

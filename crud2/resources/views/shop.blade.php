@@ -22,6 +22,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
 
             <div class="container px-4 px-lg-5">
+              <!-- <img width="20%" src="/mediaFiles/logo_azova_text.gif"/> -->
                 <a class="navbar-brand" href="https://a.com.ua/search?term=%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0 "target="_blank">купити в аптеці</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -60,198 +61,63 @@
                 <!-- добавление кнопки входа и виходу для зареєстораних -->
             </div>
 
-            <!-- випадаючий список  -->
-                                    <!-- <li class="nav-item dropdown"> -->
-                                        <!-- <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">вхід</a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                            <li><hr class="dropdown-divider" /></li>
-                                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                                        </ul> -->
-                                    <!-- </li> -->
-            <!-- випадаючий список  -->
-
         </nav>
-        <!-- Header-->
-        <header class="bg-highlight py-3">
-            <div class="container">
-                <!-- <div class="container px-4 px-lg-5 my-5"> -->
-
-<!-- альтернатівний блок -->
-          <!-- <div class="text-center text-white" style="background:#41b6e6; border-radius:10px"> -->
-                <div class="text-center text-white">
-                <img class="text-center" width="70%" src="/mediaFiles/imageAzova.png" alt=" AЗОВА 100% морська вода Азовського моря" />
-                    <!-- <h1 class="display-8 fw-bolder">Азова 100% морська вода</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">для промивання носа</p> -->
-                </div>
-            </div>
-        </header>
-        <!-- Section-->
-        <section class="py-1">
-            <div class="container px-4 px-lg-5 mt-1">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+<div class="container mt-4">
 
 
-                    <div class="col mb-5">
 
-                                <div class="card h-100">
-                                    <!-- Product image-->
-                                          <div class="mediaFiles" >
-                                            <a href="/product/1">
-                                                <img class="card-img-top" src="/mediaFiles/img_product1.png" alt="спрей назальний 70 мл 100% морська вода очищена" />
-                                            </a>
-                                          </div>
+@if($errors->any())
+<div class="alert alert-danger">
+  <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+  </ul>
+</div>
+@endif
 
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
 
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h6 class="fw-bolder">Спрей назальний гіпертонічний 70 мл</h6>
-                                            <!-- Product price-->
-                                            95.00 ГРН
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/1">детальніше</a></div>
-                                    </div>
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
-                                    </div>
 
-                        </div>
+<!-- <hr class="text-info border-2 opacity-50"> -->
+
+<div class="container px-4 px-lg-5 mt-1">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+
+      @foreach($data as $el)
+    <div class="col mb-5">
+          <div class="card h-100">
+                  <div class="mediaFiles" >
+                        <a href="/product/{{ $el->id}}">
+                      <img class="card-img-top" src="/mediaFiles/img_product{{ $el->id}}.png"/>
+                        </a>
+                  </div>
+
+                    <div class="card-body p-4">
+                      <div class="text-center">
+                        <h6 class="fw-bolder">{{$el->short_name}}
+                          <hr class="text-info border-3 opacity-50">
+                        ціна: {{ $el->retail_price}} ГРН</h6>
+                      </div>
                     </div>
 
-
-                    <div class="col mb-5">
-
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                              <div class="mediaFiles">
-                                  <a href="/product/2">
-                                  <img class="card-img-top" src="/mediaFiles/img_product2.png" alt="100% морська вода очищена" />
-                                </a>
-                              </div>
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Азова флакон 500 мл</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">150.00 ГРН</span></br>130.00 ГРН
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/2">детальніше</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
-                            </div>
-
-                        </div>
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/{{ $el->id}}">детальніше</a></div>
                     </div>
-
-                    <div class="col mb-5">
-
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <div class="mediaFiles">
-                                  <a href="/product/3">
-                                    <img class="card-img-top" src="/mediaFiles/img_product3.png" alt="спрей гіпертонічний 30 мл" />
-                                  </a>
-                            </div>
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                      <h6 class="fw-bolder">Спрей назальний гіпертонічний 30 мл</h6>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">66.00 ГРН</span></br>56.00 ГРН
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/3">детальніше</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
-                            </div>
-                        </div>
-
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
                     </div>
+          </div>
+    </div>
+      @endforeach
+</div>
+    <!-- <div class="container px-4 px-lg-5" >
+        <img width="100%" src="/mediaFiles/imageAzova.png"/>
+    </div> -->
+
+</div>
 
 
-                    <div class="col mb-5">
-
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <div class="mediaFiles">
-                                <a href="/product/4">
-                                  <img class="card-img-top" src="/mediaFiles/img_product4.png" alt="спрей ізотонічний 30 мл" />
-                                </a>
-                            </div>
-
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                      <h6 class="fw-bolder">Спрей назальний ізотонічний 30 мл</h6>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    66.00 ГРН
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/4">детальніше</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-
-        <!-- <footer class="py-5 bg-dark"> -->
-            <footer class=class="text-center text-white" style="background:#41b6e6; border-radius:5px">
-
-
-
-            <div class="container"><p class="m-0 text-center text-white">Antosha &copy; www.azova.com.ua</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+</div>
+</body>
 </html>
