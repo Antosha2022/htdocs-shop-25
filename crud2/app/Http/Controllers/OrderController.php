@@ -10,7 +10,7 @@ class OrderController extends Controller
 
   public function showBasket()
   {
-    return view('bookkeeper.basket');
+    return view('bookkeeper.cart2');
   }
 
   // public function ProductFirstShop(){

@@ -9,7 +9,7 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" /> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
@@ -30,12 +30,14 @@
                         <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">відгуки</a></li> -->
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-dark" href="/order" type="submit">
+                        <button class="btn btn-outline-dark" href="/basket" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             кошик
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
+
+
 
 
 
@@ -77,11 +79,11 @@
                 <!-- <div class="container px-4 px-lg-5 my-5"> -->
 
 <!-- альтернатівний блок -->
-          <div class="text-center text-white" style="background:#41b6e6; border-radius:15px">
-                <!-- <div class="text-center text-white"> -->
-
-                    <h1 class="display-4 fw-bolder">Азова 100% морська вода</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">для промивання носа</p>
+          <!-- <div class="text-center text-white" style="background:#41b6e6; border-radius:10px"> -->
+                <div class="text-center text-white">
+                <img class="text-center" width="70%" src="/mediaFiles/imageAzova.png" alt=" AЗОВА 100% морська вода Азовського моря" />
+                    <!-- <h1 class="display-8 fw-bolder">Азова 100% морська вода</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">для промивання носа</p> -->
                 </div>
             </div>
         </header>
