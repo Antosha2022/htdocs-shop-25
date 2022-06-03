@@ -5,6 +5,7 @@ Route::get('/', function(){return view('shop');});
 //динамічна адреса детального перегляду обраного продукту
 // Route::get('/product/{id}', function(){return view('bookkeeper.product-shop');});
 Route::get('/product/{id}', 'BookkeeperController@productShop')->name('product-shop');
+Route::get('/order/{id}', 'OrderController@showBasket')->name('basket');
 
 // Route::get('/shop-product{id}','OrderController@ProductFirstShop')->name('shop-product');
 // Route::get('/shop-product2','OrderController@ProductSecondShop')->name('shop-product2');

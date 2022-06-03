@@ -28,45 +28,48 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" target="_blank" new blank href="/mediaFiles/certificateAzova.pdf">висновок експертизи</a></li>
                         <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">відгуки</a></li> -->
-
-<!-- добавление кнопки входа и виходу для зареєстораних -->
-                        @guest
-                        <li class="nav-item"><a class="nav-link active" href="{{route('login')}}">вхід</a></li>
-                            @else
-                            <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">вихід</a>
-                            <!-- схована форма для можливості виходу -->
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                            </li>
-                        @endguest
-<!-- добавление кнопки входа и виходу для зареєстораних -->
-
-<!-- випадаючий список сховаю -->
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                            </ul>
-                        </li> -->
-<!-- випадаючий список сховаю -->
-
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
+                        <button class="btn btn-outline-dark" href="/order" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             кошик
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
+
+
+
                 </div>
+                <!-- добавление кнопки входа и виходу для зареєстораних -->
+                                        @guest
+                                        <!-- <li class="nav-item"><a class="nav-link active" href="{{route('login')}}">вхід</a></li> -->
+                                          <a class="nav-link px-2 text-secondary" href="{{route('login')}}">вхід</a>
+                                            @else
+                                            <!-- <li class="nav-item"> -->
+                                            <a class="nav-link px-2 text-secondary" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">вихід</a>
+                                            <!-- схована форма для можливості виходу -->
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                            <!-- </li> -->
+                                        @endguest
+                <!-- добавление кнопки входа и виходу для зареєстораних -->
             </div>
+
+            <!-- випадаючий список  -->
+                                    <!-- <li class="nav-item dropdown"> -->
+                                        <!-- <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">вхід</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                                            <li><hr class="dropdown-divider" /></li>
+                                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                                        </ul> -->
+                                    <!-- </li> -->
+            <!-- випадаючий список  -->
+
         </nav>
         <!-- Header-->
         <header class="bg-highlight py-3">
@@ -92,8 +95,10 @@
 
                                 <div class="card h-100">
                                     <!-- Product image-->
-                                          <div class="mediaFiles">
-                                          <img class="card-img-top"  src="/mediaFiles/img_product1.png" alt="спрей назальний 70 мл 100% морська вода очищена" />
+                                          <div class="mediaFiles" >
+                                            <a href="/product/1">
+                                                <img class="card-img-top" src="/mediaFiles/img_product1.png" alt="спрей назальний 70 мл 100% морська вода очищена" />
+                                            </a>
                                           </div>
 
                                     <!-- Product details-->
@@ -125,13 +130,15 @@
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
                               <div class="mediaFiles">
+                                  <a href="/product/2">
                                   <img class="card-img-top" src="/mediaFiles/img_product2.png" alt="100% морська вода очищена" />
+                                </a>
                               </div>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Флакон 500 мл</h5>
+                                    <h5 class="fw-bolder">Азова флакон 500 мл</h5>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
@@ -141,8 +148,7 @@
                                         <div class="bi-star-fill"></div>
                                     </div>
                                     <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">150.00 ГРН</span>
-                                    130.00 ГРН
+                                    <span class="text-muted text-decoration-line-through">150.00 ГРН</span></br>130.00 ГРН
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -163,7 +169,9 @@
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
                             <div class="mediaFiles">
-                            <img class="card-img-top" src="/mediaFiles/img_product3.png" alt="спрей гіпертонічний 30 мл" />
+                                  <a href="/product/3">
+                                    <img class="card-img-top" src="/mediaFiles/img_product3.png" alt="спрей гіпертонічний 30 мл" />
+                                  </a>
                             </div>
                             <!-- Product details-->
                             <div class="card-body p-4">
@@ -171,8 +179,7 @@
                                     <!-- Product name-->
                                       <h6 class="fw-bolder">Спрей назальний гіпертонічний 30 мл</h6>
                                     <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">66.00 ГРН</span>
-                                    56.00 ГРН
+                                    <span class="text-muted text-decoration-line-through">66.00 ГРН</span></br>56.00 ГРН
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -192,7 +199,9 @@
                         <div class="card h-100">
                             <!-- Product image-->
                             <div class="mediaFiles">
-                            <img class="card-img-top" src="/mediaFiles/img_product4.png" alt="спрей ізотонічний 30 мл" />
+                                <a href="/product/4">
+                                  <img class="card-img-top" src="/mediaFiles/img_product4.png" alt="спрей ізотонічний 30 мл" />
+                                </a>
                             </div>
 
                             <!-- Product details-->

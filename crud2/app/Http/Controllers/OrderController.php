@@ -8,6 +8,11 @@ use App\Product;
 class OrderController extends Controller
 {
 
+  public function showBasket()
+  {
+    return view('bookkeeper.basket');
+  }
+
   // public function ProductFirstShop(){
   // // return view for product id=2
   // $product=new Product;
@@ -27,4 +32,4 @@ class OrderController extends Controller
 //   // return view for product id=2
 //   $product=new Product;
 //   return view('bookkeeper.product-shop',['data'=>$product->find(4)]);
-// }
+ }
