@@ -19,11 +19,22 @@
                             <span>$40.00</span> -->
                             <div class="d-flex mt-3">
       <!-- <input class="form-control text-center me-3" type="num" value="" style="max-width: 3rem" /> -->
-                                  <div class="ms-1">
+<div class="">
+
+
+      <select class="form-select"  type="input" id="quantity">
+       <option selected value="1">1</option>
+       <option value="2">2</option>
+       <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+      </select>
+</div>
+
+
+                                  <!-- <div class="ms-1">
                                     <button class="btn btn-outline-secondary flex-shrink-0" type="button" onclick="clickMinus()">-</button>
                                   </div>
-
-
 
                                   <div class="ms-1">
                                   <form class="form-control text-center me-2" method="post" style="max-width: 3rem">
@@ -35,8 +46,8 @@
                                    <button class="btn btn-outline-success flex-shrink-0" type="button" onclick="clickPlus()">+</button>
                                  </div>
 
-
-
+                                 <label for="customRange2" class="form-label">Example range</label>
+                                 <input type="range" class="form-range" min="0" max="5" id="customRange2">
 
 
 
@@ -46,17 +57,17 @@
                                     function clickPlus() {clicks +=1;
                                       document.getElementById("clicks").innerHTML = clicks;}
 
-                                    function clickMinus() {clicks -=1;
+                                    function clickMinus() {clicks -=1 ;
                                         document.getElementById("clicks").innerHTML = clicks;}
 
 
-                                  </script>
+                                  </script> -->
 
                                 <div class="ms-3">
-                                <button class="btn btn-success flex-shrink-0" type="button" >
+                                <button class="btn btn-success flex-shrink-0" type="submit" method="post" >
 
                                     <!-- <i class="bi-cart-fill me-1"></i> -->
-                                    замовити
+                                    додати в кошик
                                 </button>
                               </div>
 
