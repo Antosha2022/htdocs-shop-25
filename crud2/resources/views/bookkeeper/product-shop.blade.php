@@ -12,28 +12,46 @@
                     <div class="col-md-6">
                         <h2 class="display-8 fw-bolder">{{$data->short_name}}</h2>
                       <div class="small mb-1">id: {{$data->id}}</div>
-                        <div class="small mb-1">штрих-код: {{$data->bar_code}}</div>
+                        <!-- <div class="small mb-1">штрих-код: {{$data->bar_code}}</div> -->
                         <div class="fs-5 mb-5">
                          <b><span class="text">ціна: {{$data->retail_price}} ГРН</span></b>
                             <!-- <span class="text-decoration-line-through">$45.00</span>
                             <span>$40.00</span> -->
                             <div class="d-flex mt-3">
       <!-- <input class="form-control text-center me-3" type="num" value="" style="max-width: 3rem" /> -->
-                                  <div>
-                                  <form class="form-control text-center me-3" method="post" style="max-width: 3rem">
+                                  <div class="ms-1">
+                                    <button class="btn btn-outline-secondary flex-shrink-0" type="button" onclick="clickMinus()">-</button>
+                                  </div>
+
+
+
+                                  <div class="ms-1">
+                                  <form class="form-control text-center me-2" method="post" style="max-width: 3rem">
                                     <a id="clicks">1</a>
+                                 </form>
                                  </div>
 
-                                <div class="ms-1">
-                                 </form>
-                                    <button class="btn btn-outline-success flex-shrink-0" type="button" onclick="clickMe()">додати ще один</button>
+                                 <div class="ms-1">
+                                   <button class="btn btn-outline-success flex-shrink-0" type="button" onclick="clickPlus()">+</button>
+                                 </div>
+
+
+
+
+
+
                                     <script>
                                     let cordI=0;
                                     let clicks = 1;
-                                    function clickMe() {clicks +=1;
+                                    function clickPlus() {clicks +=1;
                                       document.getElementById("clicks").innerHTML = clicks;}
+
+                                    function clickMinus() {clicks -=1;
+                                        document.getElementById("clicks").innerHTML = clicks;}
+
+
                                   </script>
-                                </div>
+
                                 <div class="ms-3">
                                 <button class="btn btn-success flex-shrink-0" type="button" >
 
