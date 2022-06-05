@@ -82,11 +82,7 @@
 
 <!-- альтернатівний блок -->
           <!-- <div class="text-center text-white" style="background:#41b6e6; border-radius:10px"> -->
-                <div class="text-center text-white">
-                <img class="text-center" width="70%" src="/mediaFiles/imageAzova.png" alt=" AЗОВА 100% морська вода Азовського моря" />
-                    <!-- <h1 class="display-8 fw-bolder">Азова 100% морська вода</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">для промивання носа</p> -->
-                </div>
+
             </div>
         </header>
         <!-- Section-->
@@ -128,11 +124,10 @@
 @endforeach
 <!-- запит до бази для відображення продуктів -->
 
-
-
-
-
                         </div>
+                          <div class="text-center">
+                            <img width="70%" src="/mediaFiles/imageAzova.png" alt=" AЗОВА 100% морська вода Азовського моря" />
+                          </div>
                     </div>
                 </div>
             </div>
@@ -140,15 +135,15 @@
         <!-- Footer-->
 
         <!-- <footer class="py-5 bg-dark"> -->
-            <footer class=class="text-center text-white" style="background:#41b6e6; border-radius:5px">
+            <footer class="text-center text-white" style="background:#41b6e6; border-radius:5px">
 
 
 
-            <div class="container"><p class="m-0 text-center text-white">Antosha &copy; www.azova.com.ua</p></div>
+            <div class="container"><p class="text-center text-white">Antosha &copy; www.azova.com.ua</p></div>
         </footer>
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <!-- <script src="js/scripts.js"></script> -->
     </body>
 </html>

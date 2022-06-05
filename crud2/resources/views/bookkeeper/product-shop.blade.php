@@ -29,7 +29,28 @@
                             <span>$40.00</span> -->
 
                             <div class="d-flex mt-3">
-                                <input class="form-control text-center me-3" type="num" value="1" style="max-width: 3rem" />
+                                <!-- <input class="form-control text-center me-3" type="num" value="1" style="max-width: 3rem" /> -->
+
+                                  <!-- <input class="form-control text-center me-3" type="num" value="1" style="max-width: 3rem" /> -->
+                                
+                                  <form class="form-control text-center me-3" method="post" style="max-width: 3rem">
+                                    <a id="clicks">1</a>
+
+                                 </form>
+                                    <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="clickMe()">додати</button>
+
+                                    <!-- <p>кількість: </p> -->
+                                  <script>
+                                    let cordI=0;
+                                    let clicks = 1;
+                                    function clickMe() {
+                                      clicks +=1;
+                                      document.getElementById("clicks").innerHTML = clicks;
+                                    }
+                                  </script>
+                                  <!-- <input class="form-control text-center me-3" type="button" onclick="countClick" value="шт"> -->
+
+
                                 <button class="btn btn-outline-dark flex-shrink-0" type="button" >
                                     <i class="bi-cart-fill me-1"></i>
                                     додати в кошик
