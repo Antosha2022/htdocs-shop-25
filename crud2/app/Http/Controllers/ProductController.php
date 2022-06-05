@@ -29,6 +29,11 @@ class ProductController extends Controller
     return view('bookkeeper.productList',['data'=>$product->orderBy('updated_at','desc')->get()]);
     }
 
+    public function ShopShowProducts(){
+        $product=new Product;
+    return view('shop',['data'=>$product->orderBy('id','asc')->take(4)->get()]);
+    }
+
     /**
      * Display the specified resource.
      *

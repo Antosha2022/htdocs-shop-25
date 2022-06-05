@@ -30,11 +30,13 @@
                         <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">відгуки</a></li> -->
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-dark" href="/basket" type="submit">
+                      <a href="/basket">
+                        <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             кошик
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
+                        </a>
                     </form>
 
 
@@ -92,126 +94,18 @@
             <div class="container px-4 px-lg-5 mt-1">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-
+<!-- запит до бази для відображення продуктів -->
+    @foreach($data as $el)
                     <div class="col mb-5">
-
-                                <div class="card h-100">
-                                    <!-- Product image-->
-                                          <div class="mediaFiles" >
-                                            <a href="/product/1">
-                                                <img class="card-img-top" src="/mediaFiles/img_product1.png" alt="спрей назальний 70 мл 100% морська вода очищена" />
-                                            </a>
-                                          </div>
-
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h6 class="fw-bolder">Спрей назальний гіпертонічний 70 мл</h6>
-                                            <!-- Product price-->
-                                            95.00 ГРН
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/1">детальніше</a></div>
-                                    </div>
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
-                                    </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="col mb-5">
-
                         <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                              <div class="mediaFiles">
-                                  <a href="/product/2">
-                                  <img class="card-img-top" src="/mediaFiles/img_product2.png" alt="100% морська вода очищена" />
-                                </a>
-                              </div>
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Азова флакон 500 мл</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">150.00 ГРН</span></br>130.00 ГРН
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/2">детальніше</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <div class="mediaFiles">
-                                  <a href="/product/3">
-                                    <img class="card-img-top" src="/mediaFiles/img_product3.png" alt="спрей гіпертонічний 30 мл" />
+                              <div class="mediaFiles" >
+                                  <a href="/product/{{$el->id}}">
+                                    <img class="card-img-top" src="/mediaFiles/img_product{{$el->id}}.png" alt="{{$el->short_name}}" />
                                   </a>
-                            </div>
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                      <h6 class="fw-bolder">Спрей назальний гіпертонічний 30 мл</h6>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">66.00 ГРН</span></br>56.00 ГРН
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/3">детальніше</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="col mb-5">
-
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <div class="mediaFiles">
-                                <a href="/product/4">
-                                  <img class="card-img-top" src="/mediaFiles/img_product4.png" alt="спрей ізотонічний 30 мл" />
-                                </a>
-                            </div>
-
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                      <h6 class="fw-bolder">Спрей назальний ізотонічний 30 мл</h6>
-                                    <!-- Product reviews-->
+                              </div>
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                    <h6 class="fw-bolder">{{$el->short_name}}</h6>
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
@@ -219,20 +113,23 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    66.00 ГРН
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/4">детальніше</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
-                            </div>
-                        </div>
+                                    ціна: {{ $el->retail_price}} ГРН
+                                    </div>
 
+                                </div>
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/{{$el->id}}">детальніше</a></div>
+                                </div>
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
+                                </div>
+                        </div>
                     </div>
+@endforeach
+<!-- запит до бази для відображення продуктів -->
+
+
+
 
 
                         </div>

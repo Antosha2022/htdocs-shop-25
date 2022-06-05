@@ -1,5 +1,6 @@
 <?php
-Route::get('/', function(){return view('shop');});
+// Route::get('/', function(){return view('shop');});
+Route::get('/', 'ProductController@ShopShowProducts')->name('shop');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/product/{id}', 'BookkeeperController@productShop')->name('product-shop');//динамічна адреса детального перегляду обраного продукту
