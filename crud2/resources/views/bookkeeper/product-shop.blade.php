@@ -22,7 +22,7 @@
 <div class="">
 
 
-      <select class="form-select"  type="input" id="quantity">
+      <select class="form-select"  type="input" id="qty">
        <option selected value="1">1</option>
        <option value="2">2</option>
        <option value="3">3</option>
@@ -65,8 +65,9 @@
 
                                 <div class="ms-3">
                                 <button class="btn btn-success flex-shrink-0" type="submit" method="post" >
-
-                                    <!-- <i class="bi-cart-fill me-1"></i> -->
+                                  <!-- <a href="{{route('product-shop-basket',$data->id,$data->value)}}">
+                                    <button type="submit" method="post" class= "btn btn-outline-warning">order</button></a> -->
+                                    <i class="bi-cart-fill me-1"></i>
                                     додати в кошик
                                 </button>
                               </div>

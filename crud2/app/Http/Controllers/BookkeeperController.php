@@ -20,13 +20,25 @@ class BookkeeperController extends Controller
       return view('bookkeeper.product-shop',['data'=>$product->find($id)]);
   }
 
+
+  public function productShopBasket($id,$qty){
+    $product=new Product();
+    $qty = 'value';
+      return view('bookkeeper.order',[
+        'data'=>$product->find($id),
+        'data'=>$qty->find('value'),
+      ]);
+  }
+
+
+
   // public function product_check(ProductRequest $req){
   //     dd($req);
   // }
-  public function editProduct($id){
-    $product=new Product();
-    return view('bookkeeper.update-product',['data'=>$product->find($id)]);
-  }
+  // public function editProduct($id){
+  //   $product=new Product();
+  //   return view('bookkeeper.update-product',['data'=>$product->find($id)]);
+  // }
 
 
   public function order(){
