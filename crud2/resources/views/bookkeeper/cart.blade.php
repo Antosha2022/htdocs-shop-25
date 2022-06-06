@@ -1,12 +1,12 @@
 @extends('layouts.layouts_shop')
 @section('title')карточка продукта@endsection
 @section('content')
-
-<div class="container mt-3">
+<script src="js/cart.js"></script>
+<div class="container px-4 px-lg-5 my-5">
 <!-- Cart -->
 <div class="col-lg-9 col-md-9 col-sm-12">
 <div class="col-lg-12 col-sm-12">
-   <span class="title">SHOPPING CART</span>
+   <span class="title">Ваше замовлення</span>
 </div>
 <div class="col-lg-12 col-sm-12 hero-feature">
    <div class="table-responsive">

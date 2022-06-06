@@ -63,13 +63,24 @@
 
                                   </script> -->
 
-                                <div class="ms-3">
-                                <button class="btn btn-success flex-shrink-0" type="submit" method="post" >
-                                  <!-- <a href="{{route('product-shop-basket',$data->id,$data->value)}}">
-                                    <button type="submit" method="post" class= "btn btn-outline-warning">order</button></a> -->
+                                <!-- <div class="ms-3">
+
+                                  <form class="" action="{{ route('cart.store')}}" method="post">
+                                    @csrf
+                                    <input type="number" name="quantity" value="1">
+                                    <button type="submit" name="addToCart">
+                                      додати в кошик</button>
+
+                                  </form> -->
+
+
+                                <!-- default script start -->
+                                <button class="btn btn-success flex-shrink-0 ms-2" type="submit" method="post" >
                                     <i class="bi-cart-fill me-1"></i>
                                     додати в кошик
                                 </button>
+                                <!-- default script end -->
+
                               </div>
 
                             </div>

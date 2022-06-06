@@ -30,8 +30,8 @@
                         <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">відгуки</a></li> -->
                     </ul>
                     <form class="d-flex">
-                      <a href="/basket">
-                        <button class="btn btn-outline-dark" type="submit">
+                      <a href="{{ route('cart.store') }}">
+                        <button class="btn btn-outline-dark" type="button">
                             <i class="bi-cart-fill me-1"></i>
                             кошик
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
@@ -117,6 +117,18 @@
                                     <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/{{$el->id}}">детальніше</a></div>
                                 </div>
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+
+                                  <!-- <form class="" action="{{ route('cart.store')}}" method="post">
+                                    @csrf
+                                    <div>
+                                      <input type="number" name="quantity" value="1">
+                                    </div>
+                                    <div>
+                                      <button class="btn btn-outline-dark mt-auto" type="submit" name="addToCart">
+                                      додати в кошик</button>
+                                      </div>
+                                  </form> -->
+
                                     <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">додати в кошик</a></div>
                                 </div>
                         </div>
