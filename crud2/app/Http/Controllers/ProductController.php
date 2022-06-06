@@ -20,6 +20,9 @@ class ProductController extends Controller
     //     return view('bookkeeper.product-shop',['data'=>$product->find(2)]);
     //    }
 
+    public function addNewProduct(){
+        return view('bookkeeper.product');
+    }
 
     public function FunctionAllData(){
     // можна подивитись повний масив

@@ -10,4 +10,11 @@ class CartController extends Controller
     {
       return view('bookkeeper.cart');
     }
+
+    public function addToCart(Request $requeast)
+    {
+      // code...
+    }
+
+
 }
