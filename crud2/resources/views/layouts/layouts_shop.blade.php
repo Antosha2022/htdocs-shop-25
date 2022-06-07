@@ -11,7 +11,8 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
         <!-- достатньо якогось 1-го файлу стилю, але якщо немає підключення до бутстрап, чи є у користувача взагалі інтернет -->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="/css/styles.css" rel="stylesheet" />
+        <script src="/js/custom.js"></script>
     </head>
     <body>
         <!-- Navigation-->

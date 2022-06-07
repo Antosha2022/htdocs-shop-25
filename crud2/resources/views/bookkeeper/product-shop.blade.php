@@ -17,9 +17,10 @@
                          <b><span class="text">ціна: {{$data->retail_price}} ГРН</span></b>
                             <!-- <span class="text-decoration-line-through">$45.00</span>
                             <span>$40.00</span> -->
-                            <div class="d-flex mt-3">
+                            <div class="d-flex mt-3" id=addToCartSelect>
       <!-- <input class="form-control text-center me-3" type="num" value="" style="max-width: 3rem" /> -->
-<div class="">
+<!-- <div class="row">
+  <div type="num" value="" style="max-width: 3rem">
 
 
       <select class="form-select"  type="input" id="qty">
@@ -30,15 +31,52 @@
        <option value="5">5</option>
       </select>
 </div>
+      <div class="col">
 
 
-                                  <!-- <div class="ms-1">
+          <button class="btn btn-success flex-shrink-0 ms-2" type="submit" method="post" >
+              <i class="bi-cart-fill me-1"></i>
+              додати в кошик
+          </button>
+          </div>
+      </div>
+
+              <script type="text/javascript">
+                $(document).ready(function(){
+                  $('.cart_button').click(function(){
+                    addToCart()
+                  })
+                })
+                function addToCart() {
+
+
+                  $.ajaxs({
+                    url:"{{ route('addToCart') }}",
+                    type: "POST",
+                    data: {
+
+                    },
+                      headers:{
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      },
+                      success: (data)=>{
+                        console.log(data)
+
+                      },
+                      console.error();
+                  });
+
+                }
+              </script> -->
+
+
+                                  <div class="ms-1">
                                     <button class="btn btn-outline-secondary flex-shrink-0" type="button" onclick="clickMinus()">-</button>
                                   </div>
 
                                   <div class="ms-1">
                                   <form class="form-control text-center me-2" method="post" style="max-width: 3rem">
-                                    <a id="clicks">1</a>
+                                    <a id="quantity">1</a>
                                  </form>
                                  </div>
 
@@ -46,40 +84,43 @@
                                    <button class="btn btn-outline-success flex-shrink-0" type="button" onclick="clickPlus()">+</button>
                                  </div>
 
-                                 <label for="customRange2" class="form-label">Example range</label>
-                                 <input type="range" class="form-range" min="0" max="5" id="customRange2">
 
+                                 <div class="text-center"><a class="btn btn-outline-success mt-auto ms-2" href="#">додати в кошик</a></div>
+
+
+                                 <!-- <label for="customRange2" class="form-label">Example range</label>
+                                 <input type="range" class="form-range" min="0" max="5" id="customRange2"> -->
+
+                                 <!-- <div class="ms-3">
+
+                                   <form class="" action="{{ route('cart.store')}}" method="post">
+                                     @csrf
+                                     <input type="number" name="quantity" value="1">
+                                     <button type="submit" name="addToCart">
+                                       додати в кошик</button>
+
+                                   </form> -->
 
 
                                     <script>
-                                    let cordI=0;
-                                    let clicks = 1;
-                                    function clickPlus() {clicks +=1;
-                                      document.getElementById("clicks").innerHTML = clicks;}
-
-                                    function clickMinus() {clicks -=1 ;
-                                        document.getElementById("clicks").innerHTML = clicks;}
-
-
-                                  </script> -->
-
-                                <!-- <div class="ms-3">
-
-                                  <form class="" action="{{ route('cart.store')}}" method="post">
-                                    @csrf
-                                    <input type="number" name="quantity" value="1">
-                                    <button type="submit" name="addToCart">
-                                      додати в кошик</button>
-
-                                  </form> -->
+                                    // let cordI=0;
+                                    let quantity = 1;
+                                    function clickPlus() {
+                                        if (quantity<10)
+                                      quantity +=1;
+                                      document.getElementById("quantity").innerHTML = quantity;}
 
 
-                                <!-- default script start -->
-                                <button class="btn btn-success flex-shrink-0 ms-2" type="submit" method="post" >
-                                    <i class="bi-cart-fill me-1"></i>
-                                    додати в кошик
-                                </button>
-                                <!-- default script end -->
+
+                                      function clickMinus() {
+                                          if (quantity>1)
+                                        quantity -=1 ;
+                                          document.getElementById("quantity").innerHTML = quantity;
+                                        }
+
+
+
+                                  </script>
 
                               </div>
 
@@ -98,9 +139,9 @@
           <div class="container"><p class="m-0 text-center text-white">Antosha &copy; www.azova.com.ua</p></div>
         </footer>
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <!-- <script src="/js/custom.js"></script> -->
 
         @endsection
     </body>

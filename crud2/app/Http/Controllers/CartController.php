@@ -13,7 +13,7 @@ class CartController extends Controller
 
     public function addToCart(Request $requeast)
     {
-      // code...
+      return response()->json(['id'=>$requeast->id]);
     }
 
 
