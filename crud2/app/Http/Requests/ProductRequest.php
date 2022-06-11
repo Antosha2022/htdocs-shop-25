@@ -14,7 +14,7 @@ class ProductRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
           // значення true дозволяє взаємодіяти без авторизації
     }
 

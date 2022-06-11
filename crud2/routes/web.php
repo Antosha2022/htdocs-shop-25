@@ -1,8 +1,10 @@
 <?php
 // Route::get('/', function(){return view('shop');});
 Route::get('/', 'ProductController@ShopShowProducts')->name('shop');
-Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart.store');
-Route::post('/add-to-cart', [App\Http\Controllers\CartController::class, 'addToCart'])->name('addToCart');
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('/update-cart', [CartController::class, 'update'])->name('update.cart');
+Route::delete('/remove-from-cart', [CartController::class, 'remove'])->name('remove.from.cart');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

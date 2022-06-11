@@ -11,12 +11,10 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="css/styles.css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
@@ -34,7 +32,8 @@
                         <li class="nav-item"><a class="nav-link active" target="_blank" new blank href="/mediaFiles/certificateAzova.pdf">висновок експертизи</a></li>
                         <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">відгуки</a></li> -->
                     </ul>
-                    <!-- <form class="d-flex">
+
+                    <form class="d-flex">
                       <a href="{{ route('cart') }}">
                         <button class="btn btn-outline-dark" type="button">
                             <i class="bi-cart-fill me-1"></i>
@@ -42,8 +41,9 @@
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                         </a>
-                    </form> -->
-@include('layouts.basket')
+                    </form>
+
+                    @include(layouts.basket)
 
 
 
@@ -90,77 +90,101 @@
 
             </div>
         </header>
-        <!-- Section-->
-        <section class="py-1">
-            <div class="container px-4 px-lg-5 mt-1">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-<!-- запит до бази для відображення продуктів -->
-    @foreach($data as $el)
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                              <div class="mediaFiles" >
-                                  <a href="/product/{{$el->id}}">
-                                    <img class="card-img-top" src="/mediaFiles/img_product{{$el->id}}.png" alt="{{$el->short_name}}" />
-                                  </a>
-                              </div>
-                                <div class="card-body p-4">
-                                    <div class="text-center">
-                                    <h6 class="fw-bolder">{{$el->short_name}}</h6>
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
+
+
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th style="width:50%">Product</th>
+                    <th style="width:10%">Price</th>
+                    <th style="width:8%">Quantity</th>
+                    <th style="width:22%" class="text-center">Subtotal</th>
+                    <th style="width:10%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @php $total = 0 @endphp
+                @if(session('cart'))
+                    @foreach(session('cart') as $id => $details)
+                        @php $total += $details['retail_price'] * $details['quantity'] @endphp
+                        <tr data-id="{{ $id }}">
+                            <td data-th="Product">
+                                <div class="row">
+                                    <div class="col-sm-3 hidden-xs"><img src="/mediaFiles/img_product{id}.png" width="100" height="100" class="img-responsive"/></div>
+                                    <div class="col-sm-9">
+                                        <h4 class="nomargin">{{ $details['short_name'] }}</h4>
                                     </div>
-                                    ціна: {{ $el->retail_price}} ГРН
-                                    </div>
-
                                 </div>
-                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/product/{{$el->id}}">детальніше</a></div>
-                                </div>
-                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-
-                                  <!-- <form class="" action="{{ route('cart')}}" method="post">
-                                    @csrf
-                                    <div>
-                                      <input type="number" name="quantity" value="1">
-                                    </div>
-                                    <div>
-                                      <button class="btn btn-outline-dark mt-auto" type="submit" name="addToCart">
-                                      додати в кошик</button>
-                                      </div>
-                                  </form> -->
-
-                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('add.to.cart',$el->id) }}">додати в кошик</a></div>
-                                </div>
-                        </div>
-                    </div>
-@endforeach
-<!-- запит до бази для відображення продуктів -->
-
-                        </div>
-                          <div class="text-center">
-                            <img width="70%" src="/mediaFiles/imageAzova.png" alt=" AЗОВА 100% морська вода Азовського моря" />
-                          </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-
-        <!-- <footer class="py-5 bg-dark"> -->
-            <footer class="text-center text-white" style="background:#41b6e6; border-radius:5px">
+                            </td>
+                            <td data-th="Price">${{ $details['retail_price'] }}</td>
+                            <td data-th="Quantity">
+                                <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
+                            </td>
+                            <td data-th="Subtotal" class="text-center">${{ $details['retail_price'] * $details['quantity'] }}</td>
+                            <td class="actions" data-th="">
+                                <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" class="text-right"><h3><strong>Total ${{ $total }}</strong></h3></td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="text-right">
+                        <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+                        <button class="btn btn-success">Checkout</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
 
 
+        <script type="text/javascript">
 
-            <div class="container"><p class="text-center text-white">Antosha &copy; www.azova.com.ua</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
-        <!-- Core theme JS-->
-        <!-- <script src="js/scripts.js"></script> -->
-    </body>
+            $(".update-cart").change(function (e) {
+                e.preventDefault();
+
+                var ele = $(this);
+
+                $.ajax({
+                    url: '{{ route('update.cart') }}',
+                    method: "patch",
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: ele.parents("tr").attr("data-id"),
+                        quantity: ele.parents("tr").find(".quantity").val()
+                    },
+                    success: function (response) {
+                       window.location.reload();
+                    }
+                });
+            });
+
+            $(".remove-from-cart").click(function (e) {
+                e.preventDefault();
+
+                var ele = $(this);
+
+                if(confirm("Are you sure want to remove?")) {
+                    $.ajax({
+                        url: '{{ route('remove.from.cart') }}',
+                        method: "DELETE",
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                            id: ele.parents("tr").attr("data-id")
+                        },
+                        success: function (response) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            });
+
+        </script>
+
+      </body>
 </html>
