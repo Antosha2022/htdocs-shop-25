@@ -22,4 +22,19 @@ Route::get('/product/{id}', 'BookkeeperController@productShop')->name('product-s
             Route::get('/product-list{id}/update','ProductController@updateProduct')->name('product-update');  // оновлення в 2 кроки через 2 методи
             Route::post('/product-list{id}/update/submit','ProductController@editProductSubmit')->name('product-update-submit');  // оновлення в 2 кроки через 2 метода
             Route::get('/contact/all{id}/delete','ProductController@destroyProduct')->name('product-delete');// видалення запису
+
+            Route::get('/client', 'ClientController@addNewClient')->name('client');
+            Route::post('/client/submit','ClientController@store')->name('client-form');
+            Route::get('/client-list','ClientController@FunctionAllData')->name('client-data');//  перегляд списку продуктів
+            Route::get('/client-list{id}','ClientController@show')->name('client-data-one');// детальний перегляд одного запису
+            Route::get('/client-list{id}/update','ClientController@updateClient')->name('client-update');  // оновлення в 2 кроки через 2 методи
+            Route::post('/client-list{id}/update/submit','ClientController@editClientSubmit')->name('client-update-submit');  // оновлення в 2 кроки через 2 метода
+            Route::get('/client/all{id}/delete','ClientController@destroyClient')->name('client-delete');// видалення запису
+
+
+
+
+
+
+
           });

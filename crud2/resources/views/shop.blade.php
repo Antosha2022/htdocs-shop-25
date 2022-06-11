@@ -134,7 +134,7 @@
                                       </div>
                                   </form> -->
 
-                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('add.to.cart',$el->id) }}">додати в кошик</a></div>
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/add-to-cart/{{$el->id}}">додати в кошик</a></div>
                                 </div>
                         </div>
                     </div>

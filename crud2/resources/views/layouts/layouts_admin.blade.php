@@ -27,7 +27,7 @@
                 <li><a href="/admin-home" class="nav-link px-2 text-secondary">назад</a></li>
                 <li><a href="/product-list" class="nav-link px-2 text-white">продукти</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">замовлення</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">клієнти</a></li>
+                <li><a href="/client-list" class="nav-link px-2 text-white">клієнти</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">банк</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">звітність</a></li>
               </ul>
@@ -61,7 +61,7 @@
 
 
 
-              </div>          
+              </div>
             </div>
 
 @yield('bookkeeper_content')
