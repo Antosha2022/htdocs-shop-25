@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Cart;
 use App\Policies\ProductPolicy;
 use App\Http\Requests\ProductRequest;
 
@@ -13,14 +14,7 @@ class CartController extends Controller
     {
       return view('cart');
     }
-
-    // public function addToCart(Request $requeast)
-    // {
-    //   return response()->json(['id'=>$requeast->id]);
-    // }
-    /**
-         * Write code on Method
-         *
+         /*
          * @return response()
          */
     public function addToCart($id)

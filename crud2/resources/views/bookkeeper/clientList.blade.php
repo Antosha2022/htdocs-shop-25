@@ -3,7 +3,7 @@
 @section('bookkeeper_content')
 @parent
 <div class="container mt-3">
-<h3>клієнти<a href="/product"><button class= "btn btn-outline-info ms-3">додати нового</button></a></h3>
+<h3>клієнти<a href="/client"><button class= "btn btn-outline-info ms-3">додати нового</button></a></h3>
 
 @if($errors->any())
 <div class="alert alert-danger">

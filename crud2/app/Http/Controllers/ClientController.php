@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Client;
-// use App\Policies\ProductPolicy;
-// use App\Http\Requests\ProductRequest;
+use App\Http\Requests\ClientRequest;
+use Illuminate\Http\Request;
+
 
 class ClientController extends Controller
 {
@@ -37,7 +36,7 @@ class ClientController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Client  $product
+   * @param  \App\Client  $client
    * @return \Illuminate\Http\Response
    */
   public function show($id)
@@ -60,16 +59,16 @@ class ClientController extends Controller
 
     ]);
     $client=new Client();
-    $client->short_name = $req->input('name');
+    $client->name = $req->input('name');
     $client->edrpou_code = $req->input('edrpou_code');
     $client->ipn_code = $req->input('ipn_code');
     $client->zip_code = $req->input('zip_code');
     $client->city = $req->input('city');
     $client->contract_number = $req->input('contract_number');
-    $client->rcontract_date = $req->input('contract_date');
+    $client->contract_date = $req->input('contract_date');
     $client->chipping_address = $req->input('chipping_address');
 
-    $product->save();
+    $client->save();
     return redirect()->route('client-data')->with('success','Клієнт доданий в базу даних');
 
      // dd($req);
@@ -94,13 +93,13 @@ class ClientController extends Controller
     ]);
 
     $client=new Client();
-    $client->short_name = $req->input('name');
+    $client->name = $req->input('name');
     $client->edrpou_code = $req->input('edrpou_code');
     $client->ipn_code = $req->input('ipn_code');
     $client->zip_code = $req->input('zip_code');
     $client->city = $req->input('city');
     $client->contract_number = $req->input('contract_number');
-    $client->rcontract_date = $req->input('contract_date');
+    $client->contract_date = $req->input('contract_date');
     $client->chipping_address = $req->input('chipping_address');
 
     $client->save();

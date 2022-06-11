@@ -1,6 +1,6 @@
 <div class="dropdown">
     <button type="button" class="btn btn-outline-dark" data-toggle="dropdown">
-        <i class="fa fa-shopping-cart" aria-hidden="true"></i> кошик <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i> кошик <span class="badge badge-pill badge-info">{{ count((array) session('cart')) }}</span>
     </button>
     <div class="dropdown-menu">
         <div class="row total-header-section">

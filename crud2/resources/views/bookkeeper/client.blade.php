@@ -16,7 +16,7 @@
     </div>
     @endif
 
-<form method="post" action="{{route('product-form')}}">
+<form method="post" action="{{route('client-form')}}">
 <!-- <form method="post" action="product/submit"> -->
   @csrf
 
