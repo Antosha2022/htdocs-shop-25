@@ -33,7 +33,7 @@
                         <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">відгуки</a></li> -->
                     </ul>
 
-                    <form class="d-flex">
+                    <!-- <form class="d-flex">
                       <a href="{{ route('cart') }}">
                         <button class="btn btn-outline-dark" type="button">
                             <i class="bi-cart-fill me-1"></i>
@@ -41,7 +41,7 @@
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                         </a>
-                    </form>
+                    </form> -->
 
                     @include(layouts.basket)
 
@@ -81,15 +81,12 @@
 
         </nav>
         <!-- Header-->
-        <header class="bg-highlight py-3">
+        <!-- <header class="bg-highlight py-3">
             <div class="container">
-                <!-- <div class="container px-4 px-lg-5 my-5"> -->
 
-<!-- альтернатівний блок -->
-          <!-- <div class="text-center text-white" style="background:#41b6e6; border-radius:10px"> -->
 
             </div>
-        </header>
+        </header> -->
 
 
 
@@ -117,11 +114,11 @@
                                     </div>
                                 </div>
                             </td>
-                            <td data-th="Price">${{ $details['retail_price'] }}</td>
+                            <td data-th="Price">{{ $details['retail_price'] }} ГРН</td>
                             <td data-th="Quantity">
                                 <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
                             </td>
-                            <td data-th="Subtotal" class="text-center">${{ $details['retail_price'] * $details['quantity'] }}</td>
+                            <td data-th="Subtotal" class="text-center">{{ $details['retail_price'] * $details['quantity'] }} ГРН</td>
                             <td class="actions" data-th="">
                                 <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
                             </td>

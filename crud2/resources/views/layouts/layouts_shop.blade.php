@@ -8,8 +8,13 @@
         <title>@yield('title')</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
         <!-- достатньо якогось 1-го файлу стилю, але якщо немає підключення до бутстрап, чи є у користувача взагалі інтернет -->
         <link href="/css/styles.css" rel="stylesheet" />
         <script src="/js/custom.js"></script>
@@ -27,8 +32,8 @@
 
                     </ul>
 
-
-                    <form class="d-flex">
+@include('layouts.basket')
+                    <!-- <form class="d-flex">
                       <a href="{{ route('cart') }}">
                         <button class="btn btn-outline-dark" type="button">
                             <i class="bi-cart-fill me-1"></i>
@@ -36,7 +41,7 @@
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                         </a>
-                    </form>
+                    </form> -->
 
                                 </div>
                             </div>

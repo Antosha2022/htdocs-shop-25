@@ -6,6 +6,7 @@ Route::get('/add-to-cart/{id}', 'CartController@addToCart')->name('add.to.cart')
 Route::patch('/update-cart', 'CartController@update')->name('update.cart');
 Route::delete('/remove-from-cart', 'CartController@remove')->name('remove.from.cart');
 
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/product/{id}', 'BookkeeperController@productShop')->name('product-shop');//динамічна адреса детального перегляду обраного продукту
@@ -30,11 +31,4 @@ Route::get('/product/{id}', 'BookkeeperController@productShop')->name('product-s
             Route::get('/client-list{id}/update','ClientController@updateClient')->name('client-update');  // оновлення в 2 кроки через 2 методи
             Route::post('/client-list{id}/update/submit','ClientController@editClientSubmit')->name('client-update-submit');  // оновлення в 2 кроки через 2 метода
             Route::get('/client/all{id}/delete','ClientController@destroyClient')->name('client-delete');// видалення запису
-
-
-
-
-
-
-
           });
