@@ -17,10 +17,10 @@
 <!-- <form method="post" action='/product-list{id}/update'> -->
 <form method="post" action="{{route('product-update-submit',$data->id)}}">
   @csrf
-  <!-- <div class="mb-3">
+  <div class="mb-3">
     <label for="photo" class="form-label">завантажте зображення</label>
-    <input class="form-control" type="file" id="photo">
-  </div> -->
+    <input class="form-control" type="text" id="photo">
+  </div>
   <p>id: {{$data->id}}</p>
   <div class="form-group">
     <label for="short_name">введіть скорочену назву</label>

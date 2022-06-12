@@ -13,7 +13,8 @@
      <table id="cart" class="table table-hover table-condensed">
          <thead>
              <tr>
-                 <th style="width:70%">найменування</th>
+                 <th style="width:20%">вигляд</th>
+                 <th style="width:50%">найменування</th>
                  <th style="width:10%">ціна</th>
                  <th style="width:5%">кількість</th>
                  <th style="width:10%" class="text-center">сума</th>
@@ -26,13 +27,21 @@
                  @foreach(session('cart') as $id => $details)
                      @php $total += $details['retail_price'] * $details['quantity'] @endphp
                      <tr data-id="{{ $id }}">
-                         <td data-th="Product">
-                             <div class="row">
-                                 <div class="col-sm-3 hidden-xs"><img src="/mediaFiles/img_product{id}.png" width="100" height="100" class="img-responsive"/></div>
-                                 <div class="col-sm-9">
+                         <td data-th="Image">
+                             <!-- <div class="row"> -->
+                                 <div class="col-sm-2 hidden-xs"><img src="{{ $details['image'] }}" width="150" height="100" class="img-responsive"/></div>
+                                 <!-- <div class="col-sm-10">
                                      <h5 class="nomargin">{{ $details['short_name'] }}</h5>
-                                 </div>
-                             </div>
+                                 </div> -->
+                             <!-- </div> -->
+                         </td>
+                         <td data-th="Product">
+                             <!-- <div class="row"> -->
+                                 <!-- <div class="col-sm-2 hidden-xs"><img src="{{ $details['image'] }}" width="150" height="100" class="img-responsive"/></div> -->
+                                 <!-- <div class="col-sm-2"> -->
+                                     <h5 class="nomargin">{{ $details['short_name'] }}</h5>
+                                 <!-- </div> -->
+                             <!-- </div> -->
                          </td>
                          <td data-th="Price">{{ $details['retail_price'] }} ГРН</td>
                          <td data-th="Quantity">
@@ -86,7 +95,7 @@
 
              var ele = $(this);
 
-             if(confirm("Ви дійсно бажаєте видалити із замовлення?")) {
+             if(confirm("Ви дійсно бажаєте видалити це найменування із замовлення?")) {
                  $.ajax({
                      url: '{{ route('remove.from.cart') }}',
                      method: "DELETE",

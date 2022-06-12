@@ -20,10 +20,10 @@
 <!-- <form method="post" action="product/submit"> -->
   @csrf
 
-  <!-- <div class="mb-3">
-    <label for="photo" class="form-label">завантажте зображення</label>
-    <input class="form-control" type="file" id="photo">
-  </div> -->
+  <div class="mb-3">
+    <label for="photo" class="form-label">завантажте шлях до зображення</label>
+    <input class="form-control" type="text" id="photo">
+  </div>
 
   <div class="form-group">
     <label for="short_name">введіть скорочену назву</label>

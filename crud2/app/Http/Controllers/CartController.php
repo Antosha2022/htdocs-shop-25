@@ -30,7 +30,7 @@ class CartController extends Controller
                 "short_name" => $product->short_name,
                 "quantity" => 1,
                 "retail_price" => $product->retail_price,
-                // "image" => $product->image
+                "image" => $product->image
             ];
         }
 
